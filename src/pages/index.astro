@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Cards.astro';
 import Hero from '../components/Hero.astro';
 import SpanCard from '../components/SpanCard.astro';
+import InfoIcon from '../components/icons/info.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="Portafolio WordPress">
@@ -10,27 +12,21 @@ import SpanCard from '../components/SpanCard.astro';
 		<Hero/>
 			<SpanCard/>
 		
-		<ul role="list" class="link-card-grid">
+		<article role="list" class="my-12">
+			<h1 class="text-white font-bold text-2xl my-2">Mis proyectos con WordPress</h1>
+			<p class="text-gray-600 flex gap-x-2 items-center">
+				<InfoIcon class="size-5" />
+				Se recomienda abrir con navegador Chrome
+			</p>
 			<Card
 				img='/borcelle.png'
 				title="Borcelle Restaurant"
 				href="http://anabelhm.byethost4.com/wp/home/"
-				body="Sitio web hecho con WordPress y Elementor, lo cual consiste en una web de venta de pizzas. "
+				body="Elaborado con WordPress y Elementor, dos herramientas que  permitieron diseñar una plataforma dedicada a la venta de pizzas, maquetando un proyecto de Behance. "
 			/>
-			<Card
-				img='https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				img='https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-		</ul>
+		</article>
 	</main>
+	<Footer></Footer>
 </Layout>
 
 <style>
