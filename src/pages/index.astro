@@ -8,7 +8,7 @@ import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="Portafolio WordPress">
-	<main>
+	<main class="m-auto">
 		<Hero/>
 			<SpanCard/>
 		
@@ -18,22 +18,23 @@ import Footer from '../components/Footer.astro';
 				<InfoIcon class="size-5" />
 				Se recomienda abrir con navegador Chrome
 			</p>
+			
 			<Card
 				img='/borcelle.png'
 				title="Borcelle Restaurant"
 				href="http://anabelhm.byethost4.com/wp/home/"
 				body="Elaborado con WordPress y Elementor, dos herramientas que  permitieron diseñar una plataforma dedicada a la venta de pizzas, maquetando un proyecto de Behance. "
+				tags='Elementor'
 			/>
+			
 		</article>
+		<Footer/>
 	</main>
-	<Footer></Footer>
 </Layout>
 
 <style>
 	main {
-		margin: auto;
 		width: 800px;
 		max-width: calc(100% - 2rem);
 	}
-
 </style>

@@ -4,9 +4,10 @@ interface Props {
 	body: string;
 	href: string;
 	img: string
+	tags: string
 }
 
-const { href, title, body, img } = Astro.props;
+const { href, title, body, img, tags } = Astro.props;
 ---
 
 	<article class="flex flex-col my-8 space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
@@ -14,43 +15,21 @@ const { href, title, body, img } = Astro.props;
 			<div class="relative flex flex-col items-center col-span-6 row-span-5 gap-6 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
 				<a href={href} target="_blank">
 					<img
-						class="object-cover object-top w-full h-20 transition duration-500 sm:h-full md:w-full md:scale-110 md:group-hover:scale-105"
-						loading="lazy" src={img}/>
+						class="object-cover object-top w-full lg:w-full transition duration-500 sm:h-full sm:w-full md:w-full md:scale-110 md:group-hover:scale-105"
+						loading="lazy" src={img} alt={title}/>
 				</a>
-				</div>
 			</div>
+		</div>
 			
 			<div class="w-full md:w-1/2 md:max-w-lg">
 				<h3 class="text-xl font-semibold text-gray-700 dark:text-gray-100">
 					{title}
 				</h3>
 				
-				<div class="mt-2 text-gray-700 dark:text-gray-400">{body}</div>
+			<div class="mt-2 text-gray-700 dark:text-gray-400">{body}</div>
+				<div class="flex my-4 text-blue-300">
+					<span class="px-4 py-2 border rounded-full text-sm border-blue-400">{tags}</span>
+				</div>
 		</div>
-		</article>
 
-<!-- 
-<div class="grid grid-cols-2 text-white">
-	<article class=" p-1 pb-5 my-2 bg-gray-800 rounded-md">
-		<img src={img} alt={title} class="h-56 w-full object-cover rounded-sm">
-		<a href={href} target="_blank">
-			<h2 class="text-2xl font-semibold my-2">
-				{title}
-	
-			</h2>
-			<p class="text-pretty text-sm text-gray-200">
-				{body}
-			</p>
-		</a>
-	
-
-</div>
-
-<style>
-	p {
-		margin-top: 0.5rem;
-		margin-bottom: 0;
-	}
-
-</style>
- -->
+	</article>
