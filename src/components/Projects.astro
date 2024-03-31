@@ -1,0 +1,78 @@
+---
+import Elementor from "./icons/elementor.astro";
+import Wordpress from "./icons/wordpress.astro";
+import Woocommerce from "./icons/woocommerce.astro";
+
+const TAGS = {
+    ELEMENTOR: {
+        name: "Elementor",
+        class: "bg-[#9A345D] text-white",
+        icon: Elementor,
+    },
+	WORDPRESS: {
+        name: "Wordpress",
+        class: "bg-[#08426A] text-white",
+        icon: Wordpress,
+    },
+
+	WOOCOMMERCE: {
+        name: "Woocommerce",
+        class: "bg-[#CC6FBA] text-white",
+        icon: Woocommerce,
+    },
+};
+
+const PROJECTS = [
+    {
+        title: "Borcelle Restaurant",
+        description: "Sitio web landing page sobre un restaurante de deliciosos platillos ideales para cualquier ocasión.",
+        image: "/borcelle.png",
+        tags: [TAGS.WORDPRESS, TAGS.ELEMENTOR],
+		href: '',
+    },
+
+];
+---
+
+<article class="flex flex-col gap-y-16 my-5">
+    {
+    //llamando a los props
+    PROJECTS.map(({ title, description, image, tags }) => (
+        <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+            <div class="w-full md:w-1/2">
+                <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+                    <a href="http://anabelhm.byethost4.com/wp/home/" target="_blank">
+						<img
+							class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+							loading="lazy" src={image} alt={title}/>
+					</a>
+                </div>
+            </div>
+
+            <div class="w-full md:w-1/2 md:max-w-lg">
+                <h3 class="text-xl font-bold text-gray-700 dark:text-gray-100">
+                    {title}
+                </h3>
+                
+                <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
+
+                <div class="flex flex-wrap mt-2">
+                    <ul class="flex flex-row mb-2 gap-x-2">
+                        {tags.map((tag) => (
+                            <li>
+                                <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `} >
+                                    <tag.icon class="size-4" />
+                                    {tag.name}
+                                </span>
+                            </li>
+                        ))}
+                    </ul>
+                    
+                
+                    
+                </div>
+            </div>
+        </article>
+    ))
+    }
+</article>

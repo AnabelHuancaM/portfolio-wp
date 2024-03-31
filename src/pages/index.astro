@@ -1,13 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Cards.astro';
+import Card from '../components/Projects.astro';
 import Hero from '../components/Hero.astro';
 import SpanCard from '../components/SpanCard.astro';
 import InfoIcon from '../components/icons/info.astro';
 import Footer from '../components/Footer.astro';
+import Projects from '../components/Projects.astro';
 ---
 
-<Layout title="Portafolio WordPress">
+<Layout title="Portafolio WordPress | Anabel Huanca Moreano">
 	<main class="m-auto">
 		<Hero/>
 			<SpanCard/>
@@ -18,16 +19,11 @@ import Footer from '../components/Footer.astro';
 				<InfoIcon class="size-5" />
 				Se recomienda abrir con navegador Chrome
 			</p>
-			
-			<Card
-				img='/borcelle.png'
-				title="Borcelle Restaurant"
-				href="http://anabelhm.byethost4.com/wp/home/"
-				body="Elaborado con WordPress y Elementor, dos herramientas que  permitieron diseñar una plataforma dedicada a la venta de pizzas, maquetando un proyecto de Behance. "
-				tags='Elementor'
-			/>
-
+			<Projects/>
 		</article>
+		
+		<div class="topBlur" />
+		<div class="bottomBlur" />
 		<Footer/>
 	</main>
 </Layout>
@@ -37,4 +33,19 @@ import Footer from '../components/Footer.astro';
 		width: 800px;
 		max-width: calc(100% - 2rem);
 	}
+	
+    .topBlur {
+    position: absolute;
+    width: 35vw;
+    height: 25vw;
+    min-width: 350px;
+    min-width: 350px;
+    top: -128px;
+    left: -10vw;
+    border-radius: 764px;
+    background: rgba(25, 55, 109, 0.7);
+    filter: blur(100px);
+    z-index: 0;
+    }
+
 </style>
