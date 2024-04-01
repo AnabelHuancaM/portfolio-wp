@@ -17,7 +17,7 @@ const TAGS = {
 
 	WOOCOMMERCE: {
         name: "Woocommerce",
-        class: "bg-[#CC6FBA] text-white",
+        class: "bg-[#67355d] text-white",
         icon: Woocommerce,
     },
 };
@@ -28,7 +28,15 @@ const PROJECTS = [
         description: "Sitio web landing page sobre un restaurante de deliciosos platillos ideales para cualquier ocasión.",
         image: "/borcelle.png",
         tags: [TAGS.WORDPRESS, TAGS.ELEMENTOR],
-		href: '',
+		href: 'http://anabelhm.byethost4.com/wp/home/',
+    },
+
+    {
+        title: "Shoestar",
+        description: "Ecommerce sobre una tienda de zapatos para dama, ideales para usar en cualquier temporada. ",
+        image: "/shoestar.png",
+        tags: [TAGS.WORDPRESS, TAGS.WOOCOMMERCE],
+		href: 'http://anabelhm.byethost4.com/shoestar/',
     },
 
 ];
@@ -37,11 +45,11 @@ const PROJECTS = [
 <article class="flex flex-col gap-y-16 my-5">
     {
     //llamando a los props
-    PROJECTS.map(({ title, description, image, tags }) => (
+    PROJECTS.map(({ title, description, image, tags, href }) => (
         <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
             <div class="w-full md:w-1/2">
                 <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-                    <a href="http://anabelhm.byethost4.com/wp/home/" target="_blank">
+                    <a href={href} target="_blank">
 						<img
 							class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
 							loading="lazy" src={image} alt={title}/>
